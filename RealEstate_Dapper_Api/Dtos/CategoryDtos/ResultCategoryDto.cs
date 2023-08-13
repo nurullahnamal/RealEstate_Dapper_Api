@@ -2,7 +2,7 @@
 {
     public class ResultCategoryDto
     {
-        public int CategorylD { get; set; }
+        public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public bool CategoryStatus { get; set; }
     }

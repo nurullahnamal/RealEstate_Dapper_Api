@@ -9,6 +9,13 @@ builder.Services.AddTransient<Context>();
 builder.Services.AddTransient<ICategoryRepository,CategoryRepository>();
 builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("ReadEstateApi", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -24,7 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("ReadEstateApi");
 app.UseAuthorization();
 
 app.MapControllers();

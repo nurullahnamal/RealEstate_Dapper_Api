@@ -16,7 +16,7 @@ namespace RealEstate_Dapper_Api.Repositories.EmployeeRepositories
 
         public async  void CreateEmployee(CreateEmployeeDto createEmployeeDto)
         {
-            string query = "insert into Employee (Name,Title,Mail,PhoneNumber,ImageUrl,Status) values (@name,@title,@mail,@phoneNumber,@imageUrl,@status)";
+            string query = "insert into Employee (EmployeeName,Title,Mail,PhoneNumber,ImageUrl,Status) values (@name,@title,@mail,@phoneNumber,@imageUrl,@status)";
             var parameters = new DynamicParameters();
 
             parameters.Add("@name", createEmployeeDto.Name);
@@ -67,7 +67,7 @@ namespace RealEstate_Dapper_Api.Repositories.EmployeeRepositories
 
         public async void UpdateEmployee(UpdateEmployeeDto updateEmployee)
         {
-            string query = "Update Employee Set Name=@name,Title=@title,Mail=@mail,PhoneNumber=@phoneNumber,ImageUrl=@imageUrl,Status=@status where  EmployeeID=@employeeID";
+            string query = "Update Employee Set EmployeeName=@name,Title=@title,Mail=@mail,PhoneNumber=@phoneNumber,ImageUrl=@imageUrl,Status=@status where  EmployeeID=@employeeID";
             var parameters = new DynamicParameters();
 
             parameters.Add("@name", updateEmployee.Name);
@@ -75,7 +75,7 @@ namespace RealEstate_Dapper_Api.Repositories.EmployeeRepositories
             parameters.Add("@mail", updateEmployee.Mail);
             parameters.Add("@phoneNumber", updateEmployee.PhoneNumber);
             parameters.Add("@imageUrl", updateEmployee.ImageUrl);
-            parameters.Add("@imageUrl", updateEmployee.Status);
+            parameters.Add("@status", updateEmployee.Status);
             parameters.Add("@employeeID", updateEmployee.EmployeeId);
             using (var connection = _context.CreateConnection())
             {

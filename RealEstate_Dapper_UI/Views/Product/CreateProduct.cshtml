@@ -15,11 +15,10 @@
                     <label> İlçe</label>
                     <input type="text" asp-for="title" class="form-control" />
                     <label> Kategori </label>
-                    <input type="text" asp-for="title" class="form-control" />
+                    @Html.DropDownListFor(x=>x.categoryId,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})
                     <label> Fiyat </label>
                     <input type="text" asp-for="title" class="form-control" />
-                    <label> Fiyat</label>
-                    <input type="text" asp-for="title" class="form-control" />
+
                     <label> Tür</label>
                     <input type="text" asp-for="title" class="form-control" />
                     <label> Kapak Fotoğrafi</label>

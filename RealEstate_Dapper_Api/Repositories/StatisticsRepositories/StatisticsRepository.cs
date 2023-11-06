@@ -65,7 +65,7 @@ namespace RealEstate_Dapper_Api.Repositories.StatisticsRepositories
 
         public int AverageRoomCount()
         {
-            string query = "select  Avg(RoomCount) from Product ProductDetails";
+            string query = "select  Avg(RoomCount) from  ProductDetails";
             using (var connection = _context.CreateConnection())
             {
                 var values = connection.QueryFirstOrDefault<int>(query);

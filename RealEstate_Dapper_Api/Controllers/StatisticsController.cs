@@ -12,7 +12,7 @@ namespace RealEstate_Dapper_Api.Controllers
 
         public StatisticsController(IStatisticsRepository statisticsRepository)
         {
-           _statisticsRepository = statisticsRepository;
+            _statisticsRepository = statisticsRepository;
         }
 
         [HttpGet("ActiveCategoryCount")]
@@ -20,11 +20,46 @@ namespace RealEstate_Dapper_Api.Controllers
         {
             return Ok(_statisticsRepository.ActiveCategoryCount());
         }
-        
+
         [HttpGet("ActiveEmployeeCount")]
         public IActionResult ActiveEmployeeCount()
         {
             return Ok(_statisticsRepository.ActiveEmployeeCount());
+        }
+
+        [HttpGet("ApartmentCount")]
+        public IActionResult ApartmentCount()
+        {
+            return Ok(_statisticsRepository.ApartmentCount());
+        }
+
+        [HttpGet("AverageProductByRent")]
+        public IActionResult AverageProductByRent()
+        {
+            return Ok(_statisticsRepository.AverageProductByRent());
+        }
+
+        [HttpGet("AverageProductBySale")]
+        public IActionResult AverageProductBySale()
+        {
+            return Ok(_statisticsRepository.AverageProductBySale());
+        }
+
+        [HttpGet("AverageRoomCount")]
+        public IActionResult AverageRoomCount()
+        {
+            return Ok(_statisticsRepository.AverageRoomCount());
+        }
+
+        [HttpGet("CategoryCount")]
+        public IActionResult CategoryCount()
+        {
+            return Ok(_statisticsRepository.CategoryCount());
+        }
+        [HttpGet("CategoryNameByMaxProductCount")]
+        public IActionResult CategoryNameByMaxProductCount()
+        {
+            return Ok(_statisticsRepository.CategoryNameByMaxProductCount());
         }
 
     }

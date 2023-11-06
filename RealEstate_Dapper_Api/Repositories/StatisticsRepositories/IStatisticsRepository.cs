@@ -17,6 +17,7 @@
         string NewentBuildingPrice();
         string OldestBuildingYear();
         int ActiveEmployeeCount();
+        int AverageRoomCount();
 
 
     }

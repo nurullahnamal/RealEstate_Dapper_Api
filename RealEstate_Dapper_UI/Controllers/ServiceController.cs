@@ -35,6 +35,7 @@ namespace RealEstate_Dapper_UI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateService(CreateServiceDto createServiceDto)
         {
+            createServiceDto.ServiceStatus = true;
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createServiceDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
@@ -78,7 +79,7 @@ namespace RealEstate_Dapper_UI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateServiceDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("https://localhost:44321/api/ServiceDetail/", stringContent);
+            var responseMessage = await client.PutAsync("https://localhost:44321/api/Services/", stringContent);
 
             if (responseMessage.IsSuccessStatusCode)
             {

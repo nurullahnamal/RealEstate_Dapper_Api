@@ -15,7 +15,7 @@ namespace RealEstate_Dapper_UI.Controllers
         {
             #region istatistik1
             var client =_httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44321/api/Statistics/ActiveCategoryCount");
+            var responseMessage = await client.GetAsync("https://localhost:7208/api/Statistics/ActiveCategoryCount");
 
             var jsonData= await  responseMessage.Content.ReadAsStringAsync();
             ViewBag.activeCategoryCount = jsonData;
@@ -23,7 +23,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik2
             var client2 = _httpClientFactory.CreateClient();
-            var responseMessage2 = await client.GetAsync("https://localhost:44321/api/Statistics/ActiveEmployeeCount");
+            var responseMessage2 = await client.GetAsync("https://localhost:7208/api/Statistics/ActiveEmployeeCount");
 
             var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
             ViewBag.ActiveEmployeeCount = jsonData2;
@@ -33,7 +33,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik3
             var client3 = _httpClientFactory.CreateClient();
-            var responseMessage3= await client.GetAsync("https://localhost:44321/api/Statistics/ApartmentCount");
+            var responseMessage3= await client.GetAsync("https://localhost:7208/api/Statistics/ApartmentCount");
 
             var jsonData3 = await responseMessage3.Content.ReadAsStringAsync();
             ViewBag.ApartmentCount = jsonData3;
@@ -41,7 +41,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik4
             var client4 = _httpClientFactory.CreateClient();
-            var responseMessage4 = await client.GetAsync("https://localhost:44321/api/Statistics/AverageProductByRent");
+            var responseMessage4 = await client.GetAsync("https://localhost:7208/api/Statistics/AverageProductByRent");
 
             var jsonData4 = await responseMessage4.Content.ReadAsStringAsync();
             ViewBag.AverageProductByRent = jsonData4;
@@ -49,7 +49,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik5
             var client5 = _httpClientFactory.CreateClient();
-            var responseMessage5 = await client.GetAsync("https://localhost:44321/api/Statistics/AverageProductBySale");
+            var responseMessage5 = await client.GetAsync("https://localhost:7208/api/Statistics/AverageProductBySale");
 
             var jsonData5 = await responseMessage5.Content.ReadAsStringAsync();
             ViewBag.AverageProductBySale = jsonData5;
@@ -57,7 +57,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik6
             var client6 = _httpClientFactory.CreateClient();
-            var responseMessage6 = await client.GetAsync("https://localhost:44321/api/Statistics/AverageRoomCount");
+            var responseMessage6 = await client.GetAsync("https://localhost:7208/api/Statistics/AverageRoomCount");
 
             var jsonData6 = await responseMessage6.Content.ReadAsStringAsync();
             ViewBag.AverageRoomCount = jsonData6;
@@ -65,7 +65,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik7
             var client7 = _httpClientFactory.CreateClient();
-            var responseMessage7 = await client.GetAsync("https://localhost:44321/api/Statistics/CategoryCount");
+            var responseMessage7 = await client.GetAsync("https://localhost:7208/api/Statistics/CategoryCount");
 
             var jsonData7 = await responseMessage7.Content.ReadAsStringAsync();
             ViewBag.CategoryCount = jsonData7;
@@ -73,7 +73,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik8
             var client8 = _httpClientFactory.CreateClient();
-            var responseMessage8 = await client.GetAsync("https://localhost:44321/api/Statistics/CategoryNameByMaxProductCount");
+            var responseMessage8 = await client.GetAsync("https://localhost:7208/api/Statistics/CategoryNameByMaxProductCount");
 
             var jsonData8 = await responseMessage8.Content.ReadAsStringAsync();
             ViewBag.CategoryNameByMaxProductCount = jsonData8;
@@ -81,7 +81,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik9
             var client9 = _httpClientFactory.CreateClient();
-            var responseMessage9 = await client.GetAsync("https://localhost:44321/api/Statistics/CityNameByMaxProductCount");
+            var responseMessage9 = await client.GetAsync("https://localhost:7208/api/Statistics/CityNameByMaxProductCount");
 
             var jsonData9 = await responseMessage9.Content.ReadAsStringAsync();
             ViewBag.CityNameByMaxProductCount = jsonData9;
@@ -90,7 +90,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik10
             var client10 = _httpClientFactory.CreateClient();
-            var responseMessage10 = await client.GetAsync("https://localhost:44321/api/Statistics/DifferentCityCount");
+            var responseMessage10 = await client.GetAsync("https://localhost:7208/api/Statistics/DifferentCityCount");
 
             var jsonData10= await responseMessage10.Content.ReadAsStringAsync();
             ViewBag.DifferentCityCount = jsonData10;
@@ -99,7 +99,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik11
             var client11 = _httpClientFactory.CreateClient();
-            var responseMessage11 = await client.GetAsync("https://localhost:44321/api/Statistics/EmployeeNameByMaxProductCount");
+            var responseMessage11 = await client.GetAsync("https://localhost:7208/api/Statistics/EmployeeNameByMaxProductCount");
 
             var jsonData11 = await responseMessage11.Content.ReadAsStringAsync();
             ViewBag.EmployeeNameByMaxProductCount = jsonData11;
@@ -108,7 +108,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik12
             var client12 = _httpClientFactory.CreateClient();
-            var responseMessage12 = await client.GetAsync("https://localhost:44321/api/Statistics/LastProductPrice");
+            var responseMessage12 = await client.GetAsync("https://localhost:7208/api/Statistics/LastProductPrice");
 
             var jsonData12 = await responseMessage12.Content.ReadAsStringAsync();
             ViewBag.LastProductPrice = jsonData12;
@@ -117,7 +117,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik13
             var client13 = _httpClientFactory.CreateClient();
-            var responseMessage13 = await client.GetAsync("https://localhost:44321/api/Statistics/NewentBuildingPrice");
+            var responseMessage13 = await client.GetAsync("https://localhost:7208/api/Statistics/NewentBuildingPrice");
 
             var jsonData13 = await responseMessage13.Content.ReadAsStringAsync();
             ViewBag.NewentBuildingPrice = jsonData13;
@@ -125,7 +125,7 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik14
             var client14 = _httpClientFactory.CreateClient();
-            var responseMessage14 = await client.GetAsync("https://localhost:44321/api/Statistics/OldestBuildingYear");
+            var responseMessage14 = await client.GetAsync("https://localhost:7208/api/Statistics/OldestBuildingYear");
 
             var jsonData14 = await responseMessage14.Content.ReadAsStringAsync();
             ViewBag.OldestBuildingYear = jsonData14;
@@ -134,14 +134,14 @@ namespace RealEstate_Dapper_UI.Controllers
 
             #region istatistik15
             var client15 = _httpClientFactory.CreateClient();
-            var responseMessage15 = await client.GetAsync("https://localhost:44321/api/Statistics/PassiveCategoryCount");
+            var responseMessage15 = await client.GetAsync("https://localhost:7208/api/Statistics/PassiveCategoryCount");
 
             var jsonData15 = await responseMessage15.Content.ReadAsStringAsync();
             ViewBag.PassiveCategoryCount = jsonData15;
 
             #region istatistik16
             var client16 = _httpClientFactory.CreateClient();
-            var responseMessage16 = await client.GetAsync("https://localhost:44321/api/Statistics/ProductCount");
+            var responseMessage16 = await client.GetAsync("https://localhost:7208/api/Statistics/ProductCount");
 
             var jsonData16 = await responseMessage16.Content.ReadAsStringAsync();
             ViewBag.ProductCount = jsonData16;

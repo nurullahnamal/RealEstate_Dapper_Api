@@ -1,3 +1,4 @@
+using RealEstate_Dapper_Api.Hubs;
 using RealEstate_Dapper_Api.Models.DapperContext;
 using RealEstate_Dapper_Api.Repositories.BottomGridRepositories;
 using RealEstate_Dapper_Api.Repositories.CategoryRepository;
@@ -29,9 +30,12 @@ builder.Services.AddTransient<IToDoListRepository, ToDoListRepository>();
 
 builder.Services.AddCors(opt =>
 {
-    opt.AddPolicy("ReadEstateApi", opts =>
+    opt.AddPolicy("CorsPolicy", builder =>
     {
-        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        builder.AllowAnyHeader()
+            .AllowAnyMethod()
+            .SetIsOriginAllowed((host) => true)
+            .AllowCredentials();
     });
 });
 builder.Services.AddControllers();
@@ -47,11 +51,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
-app.UseCors("ReadEstateApi");
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapHub<SignalRHub>("/signalrhub");
 app.Run();

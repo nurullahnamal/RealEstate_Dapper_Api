@@ -3,9 +3,11 @@ using Newtonsoft.Json;
 using RealEstate_Dapper_UI.Dtos.EmployeeDtos;
 using System.Net.Http;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RealEstate_Dapper_UI.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
@@ -16,18 +18,25 @@ namespace RealEstate_Dapper_UI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7208/api/Employees");
-            if (responseMessage.IsSuccessStatusCode)
+            var token = User.Claims.FirstOrDefault(x => x.Type == "realestatetoken")?.Value;
+            if (token != null)
             {
-                var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultEmployeeDto>>(jsonData);
-                return View(values);
+                var client = _httpClientFactory.CreateClient();
+                var responseMessage = await client.GetAsync("https://localhost:7208/api/Employees");
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                    var values = JsonConvert.DeserializeObject<List<ResultEmployeeDto>>(jsonData);
+                    return View(values);
+                }
             }
+
             return View();
         }
 
         [HttpGet]
+
+
         public IActionResult CreateEmployee()
         {
             return View();
@@ -74,7 +83,7 @@ namespace RealEstate_Dapper_UI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateEmployee(UpdateEmployeeDto  updateEmployeeDto)
+        public async Task<IActionResult> UpdateEmployee(UpdateEmployeeDto updateEmployeeDto)
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateEmployeeDto);

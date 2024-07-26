@@ -1,11 +1,11 @@
 ﻿using RealEstate_Dapper_Api.Dtos.BottomGridDtos;
-using RealEstate_Dapper_Api.Dtos.PopulerLocationDtos;
+using RealEstate_Dapper_Api.Dtos.PopularLocationDtos;
 
-namespace RealEstate_Dapper_Api.Repositories.PopulerLocationRepositories
+namespace RealEstate_Dapper_Api.Repositories.PopularLocationRepositories
 {
-    public interface IPopulerLocationRepository
+    public interface IPopularLocationRepository
     {
-        Task<List<ResultPopulerLocationDto>> GetAllPopulerLocationAsync();
+        Task<List<ResultPopularLocationDto>> GetAllPopularLocationAsync();
         void CreatePopularLocation(CreatePopularLocationDto createPopularLocationDto);
         void DeletePopularLocation(int id);
         void UpdatePopularLocation(UpdatePopularLocationDto updatePopularLocationDto);

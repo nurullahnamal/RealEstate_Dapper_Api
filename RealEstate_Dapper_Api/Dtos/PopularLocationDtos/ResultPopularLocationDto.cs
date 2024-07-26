@@ -1,6 +1,6 @@
-﻿namespace RealEstate_Dapper_Api.Dtos.PopulerLocationDtos
+﻿namespace RealEstate_Dapper_Api.Dtos.PopularLocationDtos
 {
-    public class UpdatePopularLocationDto
+    public class ResultPopularLocationDto
     {
         public int LocationID { get; set; }
         public string CityName { get; set; }

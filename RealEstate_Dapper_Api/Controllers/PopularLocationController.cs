@@ -1,25 +1,25 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RealEstate_Dapper_Api.Dtos.PopulerLocationDtos;
-using RealEstate_Dapper_Api.Repositories.PopulerLocationRepositories;
+using RealEstate_Dapper_Api.Dtos.PopularLocationDtos;
+using RealEstate_Dapper_Api.Repositories.PopularLocationRepositories;
 
 namespace RealEstate_Dapper_Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PopulerLocationController : ControllerBase
+    public class PopularLocationController : ControllerBase
     {
-        private readonly IPopulerLocationRepository _locationRepository;
+        private readonly IPopularLocationRepository _locationRepository;
 
-        public PopulerLocationController(IPopulerLocationRepository locationRepository)
+        public PopularLocationController(IPopularLocationRepository locationRepository)
         {
             _locationRepository=locationRepository;
         }
         [HttpGet]
 
-        public async Task<IActionResult> PopulerLocationList()
+        public async Task<IActionResult> PopularLocationList()
         {
-            var values = await _locationRepository.GetAllPopulerLocationAsync();
+            var values = await _locationRepository.GetAllPopularLocationAsync();
             return Ok(values);
         }
 

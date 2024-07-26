@@ -1,4 +1,5 @@
-﻿namespace RealEstate_Dapper_UI.Dtos.PopulerLocationDtos
+﻿
+namespace RealEstate_Dapper_Api.Dtos.PopularLocationDtos
 {
     public class CreatePopularLocationDto
     {

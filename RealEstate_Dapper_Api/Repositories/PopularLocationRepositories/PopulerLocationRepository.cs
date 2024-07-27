@@ -14,7 +14,7 @@ namespace RealEstate_Dapper_Api.Repositories.PopularLocationRepositories
 
         public async Task<List<ResultPopularLocationDto>> GetAllPopularLocationAsync()
         {
-            string query = "Select * From PopularLocation";
+            string query = "Select * From  PopularLocation";
 
             using (var connection = _context.CreateConnection())
             {
